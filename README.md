@@ -5,10 +5,16 @@ abre: el logo, un botón para escribir al correo y otro para ir a Instagram.
 
 En vivo: https://www.lasplendida.cl
 
-Es un solo `public/index.html`, sin frameworks ni dependencias. El logo va
-incrustado en el HTML (base64) para que la página funcione aunque se suba
-sin la imagen; `public/logo.png` queda solo como imagen de vista previa
-cuando se comparte el enlace (`og:image`).
+Es un solo `public/index.html`, sin frameworks ni dependencias.
+
+Tiene dos diseños de color, con un switch arriba a la derecha:
+
+- **Rojo** (por defecto): fondo rojo y logo crema, `public/logo.png`.
+- **Crema:** fondo crema, logo rojo con bajada verde, `public/logo-crema.png`.
+
+Los colores son variables CSS que cambian según `data-tema` en `<html>`. La
+elección del visitante se guarda en su navegador (`localStorage`) y se
+aplica antes de pintar la página, para que no parpadee.
 
 Netlify publica únicamente la carpeta `public/` (lo indica `netlify.toml`),
 así que este README no queda accesible en el sitio.
