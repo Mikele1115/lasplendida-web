@@ -5,14 +5,18 @@ abre: el logo, un botón para escribir al correo y otro para ir a Instagram.
 
 En vivo: https://www.lasplendida.cl
 
-Es un solo `index.html`, sin frameworks ni dependencias. El logo va
+Es un solo `public/index.html`, sin frameworks ni dependencias. El logo va
 incrustado en el HTML (base64) para que la página funcione aunque se suba
-sin la imagen; `logo.png` queda en la carpeta solo como imagen de vista
-previa cuando se comparte el enlace (`og:image`).
+sin la imagen; `public/logo.png` queda solo como imagen de vista previa
+cuando se comparte el enlace (`og:image`).
+
+Netlify publica únicamente la carpeta `public/` (lo indica `netlify.toml`),
+así que este README no queda accesible en el sitio.
 
 ## Publicación
 
-- **Hosting:** Netlify, subiendo la carpeta con Netlify Drop.
+- **Hosting:** Netlify, conectado a este repositorio: cada push a `main`
+  se publica solo.
 - **DNS:** el dominio `.cl` está registrado en NIC Chile y delega sus DNS a
   Cloudflare. Ahí, `@` y `www` son registros CNAME hacia el sitio de Netlify,
   en modo "Solo DNS" (nube gris) para que Netlify pueda emitir el
@@ -23,5 +27,4 @@ previa cuando se comparte el enlace (`og:image`).
 - **Correo:** los registros MX, SPF y DKIM de Zoho siguen en Cloudflare;
   la web no los toca.
 
-Para actualizar: editar `index.html` y volver a arrastrar la carpeta en
-Netlify → Deploys.
+Para actualizar: editar `public/index.html`, hacer commit y push a `main`.

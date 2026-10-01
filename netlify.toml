@@ -1,0 +1,4 @@
+# Netlify publica solo public/; el README y este archivo quedan fuera del sitio.
+[build]
+  publish = "public"
+
